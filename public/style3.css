@@ -1,0 +1,41 @@
+div#profile-picture {
+float: left;
+margin-right:10px;
+}
+section {
+width: 600px;
+padding: 10px;
+}
+h1{
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding-top: 10px;
+}
+h2{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding-top: 10px;
+}
+h3{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding-top: 10px;
+}
+h4{
+	font-size: 14px;
+	font-weight: bold;
+	display: inline-block;
+	margin-right: 10px
+}
+p{
+	margin-bottom: 5px;
+}
+.clear{
+	clear:both;
+}
+body {
+	padding: 20px;
+}

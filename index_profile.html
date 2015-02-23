@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<link rel="stylesheet" type="text/css" href="http://static01.linkedin.com/scds/concat/common/css?h=93aok10ecgme6tqhmiw52hm8c-2bjlp2zm2gtu0pw6x198wkrqy-54qq5r1qhnjntrmbh2umzq2ps-eg8k1v43y1z9als60zjr0guwa-ew7rgw6752see1ybdg3z9eakg-9cuqb0056pnw0gjjziez7bs26-2bx72e2q5uggalphm0d7mcg2e-bf1xyluwweqe4r1otyrldzn0p">
+        <link rel="stylesheet" type="text/css" href="http://static01.linkedin.com/scds/concat/common/css?h=2gaszootbk46w7b7g9dtq4qyq-4owkwdqvu7oz91mz6u2tgkxkp">-->
+        <link rel="stylesheet" type="text/css" href="style1.css">
+        <link rel="stylesheet" type="text/css" href="style5.css">
+        <link rel="stylesheet" type="text/css" href="style3.css">
+        <script type="text/javascript" src="handlebars-v3.0.0.js" ></script>
+    </head>
+    <body>
+        
+            <div id="wrapper">
+                
+            </div>
+            <!-- Handle Bar Template -->
+                    <script id="profiletemplate" type="text/x-handlebars-template">
+
+                     <section class="profile-header">
+                            <div class="image" style="display:block" id="profile-picture">
+                                <img src="" class="photo" width="240" height="240" alt="{{firstName}} {{lastName}}">
+                            </div>
+                            <h1>{{firstName}} {{lastName}}</h1>
+                            <p class="title">{{headline}}</p>
+                            <p class ="locationwrapper"><span>{{location.name}}</span> | <span>{{industry}}</span></p>
+                            {{#with positions}}
+                            {{#each values}}
+                            {{#if isCurrent}}
+                            <p  class= "sumamary_currentjob"><span>Current</span>  |  <span>{{company.name}}</span></p>
+                            {{/if}}
+                            {{/each}}
+                            {{/with}}
+                            <p class= "sumamary_previous"><span>Previous</span> |  <span>{{company.name}}</span></p>
+
+                            <p class= "sumamary_education"><span>Education</span> |  <span>{{educations.values.1.schoolName}}</span></p>
+                            <p class= "sumamary_connection"><span>Connection</span> |  <span>{{connections._total}}</span></p>
+                            <p class= "sumamary_websites"><span>websites</span> |  
+                                <span> 
+                                    <ul>
+                                    {{#each memberUrlResources.values}}
+                                        <li>
+                                            <a href="{{url}}" target="_blank">{{name}}</a>
+                                        </li>
+                                    {{/each}}
+
+                                    </ul>
+                                </span></p>
+                        </section>
+                        <div class="clear"></div>
+                        <section class="profile-summary">
+                            <header>
+                                <h2>Summary </h2>
+                            </header>
+                            <article class="sumary-content">
+                                {{summary}}
+                            </article>
+                            <h3>Specialties</h3>
+                            <article>
+                                {{specialties}}
+                            </article>   
+                        </section>
+                        <section>
+                            <header>
+                                <h2>Skills</h2>
+                            </header>
+                            <article>
+                                    {{#with skills}}
+                                    {{#each values}}
+                                    <ul class="skills competencies">
+                                    <li class="competency skill">
+                                        <h4><a href="#">{{skill.name}}</a></h4>
+                                        <span class="proficiency">({{proficiency.proficiency}}, {{proficiency.years}} years experience)</span>
+                                    </li>
+                                    {{/each}}
+                                    {{/with}}
+                                </ul>
+
+                            </article>
+                        </section>  
+                        <section>
+                            <header>
+                                <h2>Experience</h2>
+                            </header>
+                            {{#with positions}}
+                            {{#each values}}
+                            <article>
+                                <p class="exp_title"><h3>{{title}}</h3></p>
+                                <p class="exp_company">{{company.name}}</p>
+                                <p class="exp_type">{{company.type}} | {{company.industry}}</p>
+                                {{#if isCurrent}}
+                                <p class="exp_date">{{startDate.month}}-{{startDate.year}}  to till Date </p>
+                                {{else}}
+                                <p class="exp_date">{{startDate.month}}-{{startDate.year}}  to {{endDate.month}}-{{endDate.year}}</p>
+                                {{/if}}
+                                <p class="description">{{summary}}</p>
+
+                            </article>
+                            {{/each}} 
+                            {{/with}}
+                            
+                        </section> 
+
+                    </script>
+
+                    <script type="text/javascript" src = "template_ex.js"></script>
+    </body>
+    </html>
