@@ -13,3 +13,7 @@ The javscript code must be well written (see points metioned below)
 
 
 I have used Handle Bar for the same.
+
+I have used node JS for the server.
+
+Please do npm install and run index.js
